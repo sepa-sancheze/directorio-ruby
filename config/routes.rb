@@ -2,5 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :movies 
   resources :genre
-  resources :actor
+  resources :actor do
+    resources :movies, only: [:index]
+  end
 end
