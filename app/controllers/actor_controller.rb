@@ -2,7 +2,7 @@ class ActorController < ApplicationController
     def index
         @actors = Actor.all
         if params[:movie_id]
-            movie = Movie.find params[:movie_id]
+            movie = Movie.find(params[:movie_id])
             @actors = movie.actors
         end
         render :ok, json: @actors
